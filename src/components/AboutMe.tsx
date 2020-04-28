@@ -63,7 +63,7 @@ const AboutMe = ({ setAboutMeHeight }: props) => {
         A self-driven and motivated JavaScript developer with an emphasis on{" "}
         <strong>React JS</strong>, and with varying levels of experience in{" "}
         <strong>Node/Express/Typescript/AWS,</strong> striving to become an
-        all-round full stack developer
+        all-round full stack developer.
       </p>
       <p className="about__text">
         Other key skills include:
