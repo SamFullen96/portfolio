@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
-import CSS from "csstype";
-
 import "../App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./Navigation";
@@ -17,7 +15,7 @@ const Main = () => {
   const [showNav, setShowNav] = useState(false);
 
   useScrollPosition(({ currPos }) => {
-    if (currPos.y <= -(height - height * 0.2)) {
+    if (currPos.y <= -(height - height * 0.25)) {
       setShowNav(true);
     } else {
       setShowNav(false);
@@ -30,16 +28,11 @@ const Main = () => {
     }
   });
 
-  const styles: CSS.Properties = {
-    // @ts-ignore
-    display: showNav && "flex",
-  };
-
   return (
     <div className="main">
       <Navigation hidden={!showNav} currentSection={currentSection} />
 
-      <div className="content-container" style={styles}>
+      <div className="content-container">
         <TopSection setHeight={setHeight} />
         <div className="main-content">
           <AboutMe setAboutMeHeight={setAboutMeHeight} />
