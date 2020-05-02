@@ -1,4 +1,8 @@
 import React, { useRef, useEffect } from "react";
+import { Image, Row, Col } from "react-bootstrap";
+import SkillsChart from "./SkillsChart";
+
+const image = require("../images/download (3).png");
 
 type BreakProps = {
   double?: boolean;
@@ -59,13 +63,41 @@ const AboutMe = ({ setAboutMeHeight }: props) => {
       <span>Manchester</span>
     </div>
     <hr /> */}
+      <div className="about__top">
+        <div>
+          <Image
+            src={image}
+            thumbnail
+            roundedCircle
+            className="about__picture"
+          />
+        </div>
+        <div className="about__top--details">
+          <p className="about__top--name">Sam Fullen</p>
+          <p className="about__top--location">
+            <i className="fas fa-map-marker-alt" />
+            Manchester
+          </p>
+          <p className="about__top--email">
+            <i className="fas fa-envelope-square" />
+            <a href="mailto:sam_fullen2@hotmail.co.uk">
+              sam_fullen2@hotmail.co.uk
+            </a>
+          </p>
+          <p className="about__top--phone">
+            <i className="fas fa-phone" />
+            <a href="tel:07816223236">07816223236</a>
+          </p>
+        </div>
+      </div>
       <p className="about__text">
         A self-driven and motivated JavaScript developer with an emphasis on{" "}
         <strong>React JS</strong>, and with varying levels of experience in{" "}
         <strong>Node/Express/Typescript/AWS,</strong> striving to become an
         all-round full stack developer.
       </p>
-      <p className="about__text">
+      <SkillsChart />
+      {/* <p className="about__text">
         Other key skills include:
         <List items={["PHP", "MySql", "HTML/CSS", "SASS", "Lambda", "GIT"]} />
       </p>
@@ -97,7 +129,7 @@ const AboutMe = ({ setAboutMeHeight }: props) => {
       <p className="about__text">
         Experience with Test Driven Development, as well as other code quality
         tools and techniques such as ESLint, Prop Types or Typescript, Prettier.
-      </p>
+      </p> */}
     </div>
   );
 };

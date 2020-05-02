@@ -1,12 +1,13 @@
 import React, { useRef, useEffect } from "react";
 import Particles from "react-particles-js";
 import useIsMobile from "../hooks/useIsMobile";
+import Button from "./reusable/Button";
 
-type props = {
+type Props = {
   setHeight: (e: number) => void;
 };
 
-const TopSection = ({ setHeight }: props) => {
+const TopSection = ({ setHeight }: Props) => {
   const isMobile = useIsMobile();
   const ref = useRef<HTMLDivElement>(null);
 
@@ -42,9 +43,14 @@ const TopSection = ({ setHeight }: props) => {
             JavaScript Developer
           </h1>
           <div className="top-section__content--nav">
-            <a href="#about">About Me</a>
+            <Button small>
+              <a href="#about">
+                See my work <i className={"fas fa-angle-down"} />
+              </a>
+            </Button>
+            {/* <a href="#about">About Me</a>
             <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
+            <a href="#projects">Projects</a> */}
           </div>
         </div>
       </div>

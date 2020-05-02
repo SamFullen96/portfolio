@@ -8,6 +8,8 @@ type ExpProps = {
   duties: string;
 };
 
+type company = string;
+
 const Experience = () => (
   <div className="section experience">
     <div id="experience" className="anchor" />

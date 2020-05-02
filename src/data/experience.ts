@@ -1,4 +1,13 @@
-const experience = [
+interface Experience {
+  company: string;
+  position: string;
+  lengthOfService: string;
+  duties: string;
+}
+
+interface ExperienceItems extends Array<Experience> {}
+
+const experience: ExperienceItems = [
   {
     company: "Skiddle",
     position: "Web/JavaScript Developer",
