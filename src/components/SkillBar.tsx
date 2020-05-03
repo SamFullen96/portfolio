@@ -3,10 +3,11 @@ import React, { useState } from "react";
 type Props = {
   name: string;
   percentage: number;
+  details: string;
 };
 
-const SkillBar = ({ name, percentage }: Props) => {
-  const [isOpen, setIsOpen] = useState(false);
+const SkillBar = ({ name, percentage, details }: Props) => {
+  const [isOpen, setIsOpen] = useState(name === "React JS");
 
   return (
     <>
@@ -27,7 +28,11 @@ const SkillBar = ({ name, percentage }: Props) => {
           </span>
         </span>
       </div>
-      {isOpen && <div className="skills__bar--dropdown">More info</div>}
+      {isOpen && (
+        <div className="skills__bar--dropdown">
+          <p>{details}</p>
+        </div>
+      )}
     </>
   );
 };
