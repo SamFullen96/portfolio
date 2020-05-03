@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Particles from "react-particles-js";
+import Fade from "react-reveal/Fade";
+
 import useIsMobile from "../hooks/useIsMobile";
 import Button from "./reusable/Button";
 
@@ -38,19 +40,20 @@ const TopSection = ({ setHeight }: Props) => {
       </div>
       <div className="top-section__content-container">
         <div className="top-section__content">
-          <h1 className="top-section__content--name">Sam Fullen</h1>
-          <h1 className="top-section__content--subtitle">
-            JavaScript Developer
-          </h1>
+          <Fade top>
+            <h1 className="top-section__content--name">Sam Fullen</h1>
+          </Fade>
+          <Fade bottom>
+            <h1 className="top-section__content--subtitle">
+              JavaScript Developer
+            </h1>
+          </Fade>
           <div className="top-section__content--nav">
             <Button small>
               <a href="#about">
                 See my work <i className={"fas fa-angle-down"} />
               </a>
             </Button>
-            {/* <a href="#about">About Me</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a> */}
           </div>
         </div>
       </div>

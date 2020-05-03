@@ -16,7 +16,12 @@ const Experience = () => (
     <h1>Experience</h1>
     {experience.map(
       ({ company, position, lengthOfService, duties }: ExpProps) => (
-        <p>{company}</p>
+        <div className="experience__individual">
+          <h2 className="experience__individual--company">{company}</h2>
+          <h2 className="experience__individual--position">{position}</h2>
+          <p className="experience__individual--length">{lengthOfService}</p>
+          <p className="experience__individual--duties">{duties}</p>
+        </div>
       )
     )}
   </div>

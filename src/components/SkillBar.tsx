@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Slide from "react-reveal/Slide";
 
 type Props = {
   name: string;
@@ -7,19 +8,21 @@ type Props = {
 };
 
 const SkillBar = ({ name, percentage, details }: Props) => {
-  const [isOpen, setIsOpen] = useState(name === "React JS");
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       <div className="skills__bar">
         <span className="skills__bar--name">{name}</span>
         <span className="skills__bar--percentage-background">
-          <span
-            className="skills__bar--percentage"
-            style={{ width: `${percentage - 10}%` }}
-          >
-            {percentage}%
-          </span>
+          <Slide left>
+            <span
+              className="skills__bar--percentage"
+              style={{ width: `${percentage - 10}%` }}
+            >
+              {percentage}%
+            </span>
+          </Slide>
           <span
             className="skills__bar--dropdown-button"
             onClick={() => setIsOpen(!isOpen)}

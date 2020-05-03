@@ -1,48 +1,16 @@
 import React, { useRef, useEffect } from "react";
-import { Image, Row, Col } from "react-bootstrap";
+import { Image } from "react-bootstrap";
+import Fade from "react-reveal/Fade";
+
 import SkillsChart from "./SkillsChart";
 
 const image = require("../images/download (3).png");
 
-type BreakProps = {
-  double?: boolean;
-};
-const Break = ({ double }: BreakProps) => (
-  <>
-    <br />
-    {double && <br />}
-  </>
-);
-
-type ListProps = {
-  items: Array<string>;
-};
-const List = ({ items }: ListProps) => {
-  return (
-    <div className="list">
-      {items.map((item: string, index: number) => (
-        <>
-          {(index + 1) % 2 === 0 ? (
-            <span>
-              - <strong>{item}</strong>
-              <Break />
-            </span>
-          ) : (
-            <span>
-              - <strong>{item}</strong>
-            </span>
-          )}
-        </>
-      ))}
-    </div>
-  );
-};
-
-type props = {
+type Props = {
   setAboutMeHeight: (e: number) => void;
 };
 
-const AboutMe = ({ setAboutMeHeight }: props) => {
+const AboutMe = ({ setAboutMeHeight }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -55,40 +23,36 @@ const AboutMe = ({ setAboutMeHeight }: props) => {
   return (
     <div className="section about" ref={ref}>
       <div id="about" className="anchor" />
-      {/* <h1 className="about__name">Sam Fullen</h1>
-    <h2 className="about__subtitle">JavaScript Developer</h2>
-    <div className="about__contact-container">
-      <span>sam_fullen2@hotmail.co.uk</span>
-      <span>07816223236</span>
-      <span>Manchester</span>
-    </div>
-    <hr /> */}
       <div className="about__top">
         <div>
-          <Image
-            src={image}
-            thumbnail
-            roundedCircle
-            className="about__picture"
-          />
+          <Fade left>
+            <Image
+              src={image}
+              thumbnail
+              roundedCircle
+              className="about__picture"
+            />
+          </Fade>
         </div>
-        <div className="about__top--details">
-          <p className="about__top--name">Sam Fullen</p>
-          <p className="about__top--location">
-            <i className="fas fa-map-marker-alt" />
-            Manchester
-          </p>
-          <p className="about__top--email">
-            <i className="fas fa-envelope-square" />
-            <a href="mailto:sam_fullen2@hotmail.co.uk">
-              sam_fullen2@hotmail.co.uk
-            </a>
-          </p>
-          <p className="about__top--phone">
-            <i className="fas fa-phone" />
-            <a href="tel:07816223236">07816223236</a>
-          </p>
-        </div>
+        <Fade right>
+          <div className="about__top--details">
+            <p className="about__top--name">Sam Fullen</p>
+            <p className="about__top--location">
+              <i className="fas fa-map-marker-alt" />
+              Manchester, UK
+            </p>
+            <p className="about__top--email">
+              <i className="fas fa-envelope-square" />
+              <a href="mailto:sam_fullen2@hotmail.co.uk">
+                sam_fullen2@hotmail.co.uk
+              </a>
+            </p>
+            <p className="about__top--phone">
+              <i className="fas fa-phone" />
+              <a href="tel:07816223236">07816223236</a>
+            </p>
+          </div>
+        </Fade>
       </div>
       <p className="about__text">
         A self-driven and motivated JavaScript developer with an emphasis on{" "}

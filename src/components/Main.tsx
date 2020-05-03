@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+
 import "../App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./Navigation";

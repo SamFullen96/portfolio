@@ -211,6 +211,7 @@ html {
         display: flex;
         flex-wrap: wrap;
         &__bar {
+          z-index: 2;
           width: 100%;
           margin-top: 5px;
           display: flex;
@@ -222,6 +223,7 @@ html {
             width: 33.33%;
             font-weight: 700;
             font-size: 15px;
+            z-index: 2;
           }
           &--percentage-background {
             background-color: $white;
@@ -234,6 +236,7 @@ html {
             font-size: 15px;
           }
           &--percentage {
+            z-index: 1;
             position: absolute;
             width: 5%;
             top: 0;
@@ -269,6 +272,38 @@ html {
           color: $blue;
           font-size: 28px;
           font-weight: 700;
+          margin-bottom: 15px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+          padding-bottom: 10px;
+        }
+        &__individual {
+          &--company {
+            font-size: 18px;
+            color: $orange;
+            font-weight: 700;
+          }
+          &--position {
+            font-size: 14px;
+            color: $blue;
+            font-weight: 600;
+          }
+          &--length {
+            color: $blue;
+            font-size: 14px;
+            font-weight: 600;
+          }
+          &--duties {
+            color: $blue;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 0;
+          }
+          // &:nth-child(odd) {
+          //   text-align: rig;
+          // }
+          border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+          margin-bottom: 20px;
+          padding-bottom: 8px;
         }
       }
     }
